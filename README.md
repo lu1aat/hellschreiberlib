@@ -42,6 +42,7 @@ This library is maintained by LU1AAT Andres (lu1aat.andres at gmail dot com)
 
 ## Hellschreiber resources
 
+- fldigi Hellschreiber modem: http://www.w1hkj.com/FldigiHelp/feld_hell_page.html
 - nonstopsystems HELLSCHREIBER SOFTWARE: https://www.nonstopsystems.com/radio/hellschreiber-software.htm
 - AD9851 Hellschreiber Transmitter: https://www.george-smart.co.uk/arduino/arduino_hellschreiber/
 - Hellduino: Sending Hellschreiber from an Arduino: https://brainwagon.org/2012/01/11/hellduino-sending-hellschreiber-from-an-arduino/
