@@ -31,6 +31,9 @@ void loop() {
 }
 ```
 
+See [extras/testing.md](extras/testing.md) on how you can use test this library with a speaker.
+
+
 ## Library
 
 The library is based on [lu1aat/cw-arduino-beacon](https://github.com/lu1aat/cw-arduino-beacon) for symbol matching procedure, supported characters: `0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ`.
