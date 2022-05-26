@@ -13,7 +13,7 @@ In this diagram, we use the PIN marked as `13`:
 
 Use the [example](../examples/basic/basic.ino), see the PIN `13` set in line 18:
 
-```
+```cpp
 #include <Arduino.h>
 
 // Import library

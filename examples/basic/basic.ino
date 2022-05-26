@@ -13,7 +13,7 @@ void setup() {
 // Loop
 void loop() {
   // TX
-  hell.tx("THIS IS A TEST");
+  hell.tx("0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ");
   
   delay(9000);
 }
