@@ -51,7 +51,6 @@ int hellSymbols[][7] = {
 void Hell::tone() {
     digitalWrite(_pin, HIGH);
     delayMicroseconds(_toneDurationMicrosconds);
-    digitalWrite(_pin, LOW);
 }
 
 // Transmite mensaje
@@ -83,6 +82,7 @@ void Hell::tx(char message[]) {
          if(bitRead(column, pix) == 1) {
             tone(); 
          } else {
+            digitalWrite(_pin, LOW);
             delayMicroseconds(_toneDurationMicrosconds);
          }
       }
