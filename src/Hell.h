@@ -11,10 +11,10 @@ class Hell
         int _pin;
     
         const int _toneDurationMicrosconds = 8160;  // Tone ("pixel") duration
-        const int _wordSpacingMs = 600;             // Delay spacing between words
+        const int _wordSpacingMs = ((_toneDurationMicrosconds / 1000) * 7) * 7;             // Delay spacing between words
         const int _columns = 7;                     // How many "columns" (pixels wide) have a single character
         int _hellSymbols;                           // Symbol table, declared in Hell.cpp
-        int _charDelay = 200;                       // Delay between each character of the message, in milliseconds
+        int _charDelay = (_toneDurationMicrosconds / 1000) * 7;   // Delay between each character of the message in millisencos
 };
 
 #endif
