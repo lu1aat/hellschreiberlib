@@ -4,7 +4,7 @@
 
 This library will modulate OOK [Hellschreiber](https://en.wikipedia.org/wiki/Hellschreiber) signal in the desired output pin. Can be used for beacons, telemetry, tests and experimentation.
 
-Supported characters: `0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ`.
+Supported characters: `0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.-=!:*`. Only **UPPERCASE** letters supported.
 
 ![Sample of supported characters](extras/sample.png)
 
@@ -36,7 +36,7 @@ See [extras/testing.md](extras/testing.md) on how you can use test this library 
 
 ## Library
 
-The library is based on [lu1aat/cw-arduino-beacon](https://github.com/lu1aat/cw-arduino-beacon) for symbol matching procedure, supported characters: `0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ`.
+The library is based on [lu1aat/cw-arduino-beacon](https://github.com/lu1aat/cw-arduino-beacon) for symbol matching procedure, supported characters: `0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.-=!:*`.
 
 ![Sample of supported characters](extras/sample.png)
 

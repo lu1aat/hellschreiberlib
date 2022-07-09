@@ -15,6 +15,8 @@ class Hell
         const int _columns = 7;                     // How many "columns" (pixels wide) have a single character
         int _hellSymbols;                           // Symbol table, declared in Hell.cpp
         int _charDelay = (_toneDurationMicrosconds / 1000) * 7;   // Delay between each character of the message in millisencos
+
+        int _charCurrent;
 };
 
 #endif

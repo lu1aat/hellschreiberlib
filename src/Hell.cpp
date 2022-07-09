@@ -6,8 +6,15 @@ Hell::Hell(int pin) {
     _pin = pin;
 }
 
-// 0-9 group is ASCII 48-57 located fom 25 to 35
+//
+// Symbol table
+//
 // A-Z group is ASCII 65-90 located from 0 to 25
+// 0-9 group is ASCII 48-57 located from 25 to 35
+// Special charaters from 36
+//
+// This python line helps to build each column `hex(int("0010000", 2))`
+//
 int hellSymbols[][7] = {
     {0x3E, 0x28, 0x28, 0x28, 0x3E},       // 0  A
     {0x7C, 0x54, 0x54, 0x54, 0x28},       // 1  B
@@ -44,7 +51,13 @@ int hellSymbols[][7] = {
     {0x7C, 0x54, 0x54, 0x54, 0x5C},    // 32 6
     {0x40, 0x40, 0x40, 0x40, 0x7C},    // 33 7
     {0x7C, 0x54, 0x54, 0x54, 0x7C},    // 34 8
-    {0x74, 0x54, 0x54, 0x54, 0x7C}     // 35 9
+    {0x74, 0x54, 0x54, 0x54, 0x7C},    // 35 9
+    {0x00, 0x03, 0x03, 0x00, 0x00},    // 36 .
+    {0x10, 0x10, 0x10, 0x10, 0x10},    // 37 -
+    {0x12, 0x12, 0x12, 0x12, 0x12},    // 38 =
+    {0x00, 0x12, 0x12, 0x00, 0x00},    // 39 :
+    {0x00, 0x3A, 0x3A, 0x00, 0x00},    // 40 !
+    {0x00, 0x28, 0x10, 0x28, 0x00}     // 41 *
 };
 
 // Tone
@@ -57,8 +70,9 @@ void Hell::tone() {
 void Hell::tx(char message[]) {
   // Iter over message characters
   for(byte i = 0; i < strlen(message); i++) {
+    _charCurrent = message[i];
     // Check for SPACE, DEC 32
-    if(message[i] == 32) {
+    if(_charCurrent == 32) {
       delay(_wordSpacingMs);
       continue;
     }
@@ -66,10 +80,24 @@ void Hell::tx(char message[]) {
     // Calculate character position in symbol table
     int symbolIndex = 0;
     int symbolShift = 65;
-    if (message[i] < 58) {
+
+    // Special characters will need to be shifted, this code can be improved/refactored
+    if(_charCurrent == 46) {  // 46 is dot "."
+        symbolShift = 10;
+    } else if (_charCurrent == 45) {  // 45 is dash "-"
+        symbolShift = 8;
+    } else if (_charCurrent == 61) {  // 61 is dash "="
+        symbolShift = 23;
+    } else if (_charCurrent == 58) {  // 58 is ":"
+        symbolShift = 19;
+    } else if (_charCurrent == 33) {  // 33 is "!"
+        symbolShift = -7;
+    } else if (_charCurrent == 42) {  // 42 is "*"
+        symbolShift = 1;
+    } else if (_charCurrent < 58) {
         symbolShift = 22;
     }
-    symbolIndex = message[i] - symbolShift;
+    symbolIndex = _charCurrent - symbolShift;
 
     // Get symbols for this character, send signals by setting _pin into HIGH in the required intervals
     for(byte ii = 0; ii < _columns; ii++) {
