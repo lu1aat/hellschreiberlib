@@ -6,7 +6,11 @@ An easy way to test the library is to hook up a piezo speaker to the output PIN 
 
 In this diagram, we use the PIN marked as `13`:
 
+<<<<<<< HEAD
 <img src="https://github.com/lu1aat/cw-arduino-beacon/raw/master/diagram-connections.png">
+=======
+![diagram-connections.png]()
+>>>>>>> b293322d6825fe9879520b9fb5f115b436bf3191
 
 
 ## Upload sketch
