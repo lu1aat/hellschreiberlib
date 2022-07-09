@@ -6,12 +6,12 @@ An easy way to test the library is to hook up a piezo speaker to the output PIN 
 
 In this diagram, we use the PIN marked as `13`:
 
-![https://raw.githubusercontent.com/lu1aat/cw-arduino-beacon/master/diagram-connections.png]()
+<img src="https://github.com/lu1aat/cw-arduino-beacon/raw/master/diagram-connections.png">
 
 
 ## Upload sketch
 
-Use the [example](../examples/basic/basic.ino), see the PIN `13` set in line 18:
+Use the [example](../examples/basic/basic.ino), see the PIN `13` set in line 7:
 
 ```cpp
 #include <Arduino.h>
@@ -19,7 +19,7 @@ Use the [example](../examples/basic/basic.ino), see the PIN `13` set in line 18:
 // Import library
 #include <Hell.h>
 
-// Set Hell library to work with PIN number 8
+// Set Hell library to work with PIN number 13
 Hell hell(13);
 
 // Setup
