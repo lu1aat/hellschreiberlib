@@ -51,3 +51,11 @@ This library is maintained by LU1AAT Andres (lu1aat.andres at gmail dot com)
 - Hellduino: Sending Hellschreiber from an Arduino: https://brainwagon.org/2012/01/11/hellduino-sending-hellschreiber-from-an-arduino/
 - Sending hellschreiber from an Arduino –> Helldunio!: http://www.lb3hc.net/archives/1303
 - ARDUINO FOR HAM RADIO | Hellschreiber: https://k183.bake-neko.net/ji3bnb/page14.html
+
+
+## Changelog
+
+#### 0.1.0 - 27/07/2022
+
+- Initial release
+- Support for only uppercase letters, numbers and six simbols.
