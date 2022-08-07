@@ -15,7 +15,7 @@ Hell::Hell(int pin) {
 //
 // This python line helps to build each column `hex(int("0010000", 2))`
 //
-int hellSymbols[][7] = {
+const unsigned int hellSymbols[][7] PROGMEM = {
     {0x3E, 0x28, 0x28, 0x28, 0x3E},       // 0  A
     {0x7C, 0x54, 0x54, 0x54, 0x28},       // 1  B
     {0x3E, 0x22, 0x22, 0x22, 0x00},       // 2  C
@@ -102,7 +102,7 @@ void Hell::tx(char message[]) {
     // Get symbols for this character, send signals by setting _pin into HIGH in the required intervals
     for(byte ii = 0; ii < _columns; ii++) {
       int column = 0;
-      column = hellSymbols[symbolIndex][ii];
+      column = pgm_read_word_near(hellSymbols[symbolIndex] + ii);
 
       // Iter over pixels
       int pix;
