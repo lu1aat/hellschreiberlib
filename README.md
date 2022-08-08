@@ -55,6 +55,12 @@ This library is maintained by LU1AAT Andres (lu1aat.andres at gmail dot com)
 
 ## Changelog
 
+#### 0.1.2 - 07/08/2022
+
+- Symbol table: use PROGMEM to the symbol table in flash (program) memory instead of SRAM. This make possible that the code run in small micro-controllers like ATTiny85.
+- Constants: Change int definitions to unsigned.
+- Documentation: Added documentation about use with Pixie QRP HF transceiver.
+
 #### 0.1.0 - 27/07/2022
 
 - Initial release
