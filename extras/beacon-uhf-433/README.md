@@ -55,7 +55,7 @@ Micro-controllers *compatible with Arduino* should work with this example code. 
 
    Beacon example:
 
-   "... CX9CAT TEST BCN V3.47 L32 CX9CAT ..."
+   "... CX9CAT TEST BCN 3.47VOLT 32LOOP CX9CAT ..."
 
    Structure:
               - Hell Header
@@ -136,7 +136,13 @@ void loop() {
 
 The `PB0` value for the `PIN_TX` variable sets the pin that will be connected to the `DATA` pin in the radio module.
 
-The beacon is composed of a header, telemetry and trail. When transmission ends, there is an sleep period where the beacon does not transmit. This interval can be set in the `SLEEP_SECONDS` variable.
+The beacon is composed of a header, telemetry and trail. When transmission ends, there is an sleep period where the beacon does not transmit. This interval can be set in the `SLEEP_SECONDS` variable:
+
+- Header: `... CX9CAT TEST BCN`
+- Telemetry:
+  - `3.47VOLT`: MCU voltage measure in volts
+  - `15LOOP`: The number of "loops" or times the beacon was transmited since last MCU power up, this number resets each time the beacon does not have power to run
+- Trail: `CX9CAT TEST...`
 
 Tuning the radio or SDR around 433.800 MHz, searching for the pulsating Hellschreiber carrier:
 
